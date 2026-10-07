@@ -1,0 +1,550 @@
+/* ============================================ */
+/* VARIABLES DE DISEÑO (DESIGN SYSTEM)          */
+/* ============================================ */
+:root {
+  --color-primary: #2563EB;        /* Azul Eléctrico */
+  --color-primary-hover: #1D4ED8;  /* Azul Oscuro para Hover */
+  --color-secondary: #0F172A;      /* Gris Grafito Oscuro */
+  --color-accent: #06B6D4;         /* Cian Neón */
+  --color-bg: #F8FAFC;             /* Gris Humo Claro */
+  --color-card-bg: #FFFFFF;        /* Blanco Puro */
+  --color-text-main: #334155;      /* Gris Oscuro para Texto */
+  --color-text-muted: #64748B;     /* Gris Medio */
+  --color-border: #E2E8F0;         /* Gris Borde */
+
+  --font-title: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================ */
+/* RESET BÁSICO Y ESTILOS GENERALES             */
+/* ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-title);
+  color: var(--color-secondary);
+  line-height: 1.2;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.subtitulo-seccion {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+}
+
+/* ============================================ */
+/* 1. ENCABEZADO (HEADER & NAVBAR)              */
+/* ============================================ */
+.encabezado {
+  background-color: var(--color-secondary);
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navegacion-contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--color-accent);
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}
+
+.menu a {
+  color: #E2E8F0;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: var(--color-accent);
+}
+
+.boton-menu {
+  background-color: var(--color-primary);
+  padding: 8px 18px;
+  border-radius: 6px;
+  color: #FFFFFF !important;
+  font-weight: 600;
+  transition: background-color 0.2s ease !important;
+}
+
+.boton-menu:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* ============================================ */
+/* 2. SECCIÓN PRINCIPAL (HERO)                  */
+/* ============================================ */
+.hero {
+  background: linear-gradient(180deg, var(--color-secondary) 0%, #1E293B 100%);
+  color: #FFFFFF;
+  padding: 90px 0;
+}
+
+.hero-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-columna-izquierda {
+  flex: 1 1 480px;
+}
+
+.etiqueta-negocio {
+  display: inline-block;
+  background-color: rgba(6, 182, 212, 0.15);
+  color: var(--color-accent);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hero-columna-izquierda h1 {
+  font-size: 3rem;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.eslogan {
+  font-size: 1.25rem;
+  color: var(--color-accent);
+  font-style: italic;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.descripcion-hero {
+  color: #94A3B8;
+  font-size: 1.05rem;
+  margin-bottom: 30px;
+}
+
+.hero-columna-derecha {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-columna-derecha img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+/* Botón General */
+.boton {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.boton-principal {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.boton-principal:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px);
+}
+
+/* ============================================ */
+/* 3. SECCIÓN NOSOTROS                          */
+/* ============================================ */
+.nosotros {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.nosotros-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.nosotros-imagen {
+  flex: 1 1 400px;
+}
+
+.nosotros-imagen img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.nosotros-texto {
+  flex: 1 1 480px;
+}
+
+.nosotros-texto h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.nosotros-texto p {
+  margin-bottom: 15px;
+  color: var(--color-text-main);
+  font-size: 1rem;
+}
+
+/* ============================================ */
+/* 4. PRODUCTOS Y SERVICIOS (FLEXBOX GRID)      */
+/* ============================================ */
+.productos {
+  padding: 80px 0;
+  background-color: var(--color-bg);
+}
+
+.productos-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+}
+
+.tarjeta-producto {
+  background-color: var(--color-card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex: 1 1 320px;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta-producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.12);
+  border-color: var(--color-primary);
+}
+
+.tarjeta-producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.tarjeta-contenido {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tarjeta-contenido h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.tarjeta-contenido p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.precio {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.boton-tarjeta {
+  display: block;
+  text-align: center;
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  padding: 10px 0;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.boton-tarjeta:hover {
+  background-color: var(--color-primary);
+}
+
+/* ============================================ */
+/* 5. SECCIÓN BENEFICIOS                        */
+/* ============================================ */
+.beneficios {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.beneficios-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.tarjeta-beneficio {
+  background-color: var(--color-bg);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  text-align: center;
+  flex: 1 1 280px;
+  max-width: 360px;
+}
+
+.icono-beneficio {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.tarjeta-beneficio h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.tarjeta-beneficio p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ============================================ */
+/* 6. TABLA COMPARATIVA                          */
+/* ============================================ */
+.seccion-tabla {
+  padding: 80px 0;
+  background-color: var(--color-bg);
+}
+
+.contenedor-tabla {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFFFF;
+  text-align: left;
+}
+
+thead {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+}
+
+th, td {
+  padding: 15px 20px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.95rem;
+}
+
+th {
+  font-family: var(--font-title);
+  font-weight: 600;
+}
+
+tbody tr:hover {
+  background-color: #F1F5F9;
+}
+
+/* ============================================ */
+/* 7. GALERÍA DE IMÁGENES                       */
+/* ============================================ */
+.galeria {
+  padding: 80px 0;
+  background-color: #FFFFFF;
+}
+
+.galeria-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.galeria-contenedor img {
+  flex: 1 1 300px;
+  max-width: 380px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.galeria-contenedor img:hover {
+  transform: scale(1.02);
+}
+
+/* ============================================ */
+/* 8. FORMULARIO DE CONTACTO                    */
+/* ============================================ */
+.contacto {
+  padding: 80px 0;
+  background-color: var(--color-bg);
+}
+
+.formulario-contacto {
+  max-width: 650px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.campo-formulario {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-formulario label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--color-secondary);
+  font-size: 0.95rem;
+}
+
+.campo-formulario input,
+.campo-formulario select,
+.campo-formulario textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  background-color: #FAFAFA;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.campo-formulario input:focus,
+.campo-formulario select:focus,
+.campo-formulario textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background-color: #FFFFFF;
+}
+
+.boton-formulario {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+}
+
+/* ============================================ */
+/* 9. PIE DE PÁGINA (FOOTER)                    */
+/* ============================================ */
+.pie-pagina {
+  background-color: var(--color-secondary);
+  color: #FFFFFF;
+  padding: 60px 0 30px 0;
+  border-top: 1px solid #334155;
+}
+
+.pie-pagina-contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.columna-footer {
+  flex: 1 1 250px;
+}
+
+.logo-footer {
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.eslogan-footer {
+  color: #94A3B8;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.columna-footer h4 {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.columna-footer p {
+  color: #94A3B8;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
